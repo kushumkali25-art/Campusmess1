@@ -1,0 +1,269 @@
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  padding: 0;
+  background: #f7f8f2;
+  color: #243c2e;
+  font-family: Arial, sans-serif;
+}
+.dashboard-sidebar {
+  width: 245px;
+  min-width: 245px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: #e9edf2;
+  padding: 25px 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #dce1e7;
+}
+
+.sidebar-logo {
+  color: #174b35;
+  font-size: 23px;
+  font-weight: bold;
+  margin: 5px 10px 25px;
+}
+
+.sidebar-user {
+  padding: 15px 10px;
+  border-top: 1px solid #cbd1d8;
+  border-bottom: 1px solid #cbd1d8;
+  margin-bottom: 20px;
+}
+
+.sidebar-user p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboard .sidebar-nav button,
+.dashboard .sidebar-logout {
+  text-align: left;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: #243c2e;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dashboard .sidebar-nav button:hover,
+.dashboard .sidebar-nav button.active {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.sidebar-account {
+  margin-top: 25px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.dashboard .sidebar-logout {
+  margin-top: auto;
+  background: #174b35;
+  color: white;
+  font-weight: bold;
+}
+
+.dashboard-content {
+  flex: 1;
+  min-width: 0;
+  padding: 35px;
+  overflow: hidden;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  background: #174b35;
+  color: white;
+  border-radius: 18px;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  margin: 10px 0;
+  font-size: 30px;
+}
+
+.dashboard-profile,
+.dashboard-menu {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  scroll-margin-top: 25px;
+}
+
+.dashboard-profile h2,
+.dashboard-menu h2 {
+  margin-top: 0;
+  color: #174b35;
+}
+
+.dashboard-profile p {
+  margin: 12px 0;
+}
+
+.dashboard-meals {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.dashboard-meal-card {
+  padding: 22px;
+  background: #f7f8f2;
+  border-radius: 12px;
+  border-left: 4px solid #f2a541;
+  overflow-wrap: anywhere;
+}
+
+.dashboard-meal-card h3 {
+  color: #174b35;
+  margin-top: 0;
+}
+
+.dashboard-meal-card p {
+  color: #777;
+  font-size: 14px;
+}
+
+.dashboard-meal-card li {
+  margin: 10px 0;
+}
+.dashboard-profile form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.dashboard-profile form label {
+  font-weight: bold;
+  color: #174b35;
+  margin-top: 8px;
+}
+
+.dashboard-profile form select,
+.dashboard-profile form textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d9dfd8;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  background: white;
+}
+
+.dashboard-profile form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.dashboard-profile form select:focus,
+.dashboard-profile form textarea:focus {
+  outline: 2px solid #174b35;
+  border-color: #174b35;
+}
+
+.dashboard-profile form button {
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+.dashboard button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dashboard-profile article {
+  padding: 18px;
+  background: #f7f8f2;
+  border-radius: 10px;
+  margin-top: 15px;
+  border-left: 4px solid #f2a541;
+}
+
+.dashboard-profile article h3 {
+  color: #174b35;
+  margin-top: 0;
+}
+
+.dashboard-profile article small {
+  color: #777;
+}
+
+.dashboard-content button {
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+
+@media (max-width: 900px) {
+  .dashboard-meals {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .dashboard-sidebar {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    position: relative;
+    padding: 15px;
+  }
+
+  .sidebar-user,
+  .sidebar-account {
+    display: none;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .dashboard .sidebar-nav button {
+    white-space: nowrap;
+  }
+
+  .dashboard .sidebar-logout {
+    margin-top: 12px;
+  }
+
+  .dashboard-content {
+    padding: 18px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-meals {
+    grid-template-columns: 1fr;
+  }
+}
