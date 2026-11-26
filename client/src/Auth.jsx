@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import "./Auth.css";
 
@@ -36,7 +37,7 @@ function Auth({ onLogin }) {
       const endpoint = isLogin ? "login" : "register";
 
       const response = await fetch(
-        `http://localhost:5000/api/auth/${endpoint}`,
+        `https://campusmess1.onrender.com/api/auth/${endpoint}`,
         {
           method: "POST",
           headers: {

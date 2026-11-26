@@ -1,7 +1,8 @@
+
 import { useEffect, useState } from "react";
 import "./AdminDashboard.css";
 
-const API = "http://localhost:5000";
+const API = "https://campusmess1.onrender.com";
 
 function AdminDashboard({ onLogout }) {
   const [stats, setStats] = useState({

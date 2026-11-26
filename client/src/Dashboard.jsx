@@ -1,7 +1,8 @@
+
 import { useEffect, useState } from "react";
 import "./Dashboard.css";
 
-const API = "http://localhost:5000";
+const API = "https://campusmess1.onrender.com";
 
 const mealDeadlines = {
   Breakfast: "06:30",
@@ -247,7 +248,6 @@ function Dashboard({ onLogout }) {
 
   return (
     <main className="dashboard">
-
       <aside className="dashboard-sidebar">
         <div className="sidebar-logo">CampusMess</div>
 
@@ -302,7 +302,6 @@ function Dashboard({ onLogout }) {
       </aside>
 
       <div className="dashboard-content">
-
         <header className="dashboard-header" id="dashboard">
           <div>
             <p>CampusMess | Student Portal</p>
@@ -356,6 +355,7 @@ function Dashboard({ onLogout }) {
             </article>
           </div>
         </section>
+
         <section className="dashboard-profile" id="attendance">
           <h2>My Meal Attendance</h2>
           <p>Select whether you will eat each meal today.</p>
@@ -428,6 +428,7 @@ function Dashboard({ onLogout }) {
 
           {attendanceMessage && <p>{attendanceMessage}</p>}
         </section>
+
         <section className="dashboard-profile" id="feedback">
           <h2>Share Your Meal Feedback</h2>
           <p>Tell us about your food experience.</p>
@@ -474,6 +475,7 @@ function Dashboard({ onLogout }) {
 
           {feedbackMessage && <p>{feedbackMessage}</p>}
         </section>
+
         <section className="dashboard-profile">
           <h2>My Previous Feedback</h2>
 
@@ -492,7 +494,6 @@ function Dashboard({ onLogout }) {
             ))
           )}
         </section>
-
       </div>
     </main>
   );
